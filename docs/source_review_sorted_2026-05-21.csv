@@ -1,0 +1,20 @@
+priority,source,category,access_class,bootstrap_status,rows_collected,registration_required,user_action_needed
+1,BLS CPI API,macro,accessible_now,success,28,no,none
+1,CFTC FinFutWk,positioning,accessible_now,success,91,no,none
+1,ECB SDMX EXR,macro,accessible_now,success,1,no,none
+1,SEC companyfacts JSON,filings,accessible_now,success,200,no,none
+1,SEC submissions JSON,filings,accessible_now,success,200,no,none
+1,World Bank GDP API,macro,accessible_now,success,50,no,none
+1,FRED API (needs key),macro,key_required_or_params,skipped,0,yes,register_and_provide_key
+2,Crossref works,papers,accessible_now,success,20,no,none
+2,DeFiLlama protocols,capital_flows,accessible_now,success,50,no,none
+2,Google Patents search page,patents,accessible_now,success,1,no,none
+2,OpenAlex works,papers,accessible_now,success,20,no,none
+2,PubMed esearch,papers,accessible_now,success,20,no,none
+2,Semantic Scholar search,papers,rate_limited,not_run,0,no,optional_key_for_rate_limit
+2,US Treasury FiscalData rates,capital_flows,accessible_now,success,100,no,none
+2,USPTO bulk data page,patents,accessible_now,success,1,no,none
+2,WIPO Patentscope,patents,accessible_now,success,1,no,none
+2,arXiv export api,papers,accessible_now,success,20,no,none
+2,EPO OPS search (auth expected),patents,auth_or_policy_block,not_run,0,yes,register_and_provide_key
+3,GDELT DOC api,news_proxy,accessible_now,not_run,0,no,none

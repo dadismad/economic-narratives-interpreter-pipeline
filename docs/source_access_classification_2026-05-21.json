@@ -1,0 +1,214 @@
+{
+  "checked_at": "2026-05-21T19:15:53.851780Z",
+  "summary": {
+    "key_required_or_params": 1,
+    "accessible_now": 16,
+    "rate_limited": 1,
+    "auth_or_policy_block": 1
+  },
+  "rows": [
+    {
+      "source": "FRED API (needs key)",
+      "category": "macro",
+      "url": "https://api.stlouisfed.org/fred/series/observations?series_id=CPIAUCSL&file_type=json",
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request",
+      "access_class": "key_required_or_params",
+      "next_action": "add_api_key"
+    },
+    {
+      "source": "SEC submissions JSON",
+      "category": "filings",
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json",
+      "sample": "{\"cik\":\"0000320193\",\"entityType\":\"operating\",\"sic\":\"3571\",\"sicDescription\":\"Electronic Computers\",\"ownerOrg\":\"06 Technology\",\"insiderTransactionForOwnerExists\":0,\"insiderTransactio",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "SEC companyfacts JSON",
+      "category": "filings",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json",
+      "sample": "{\"cik\":320193,\"entityName\":\"Apple Inc.\",\"facts\":{\"dei\":{\"EntityCommonStockSharesOutstanding\":{\"label\":\"Entity Common Stock, Shares Outstanding\",\"description\":\"Indicate number of sh",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "CFTC FinFutWk",
+      "category": "positioning",
+      "url": "https://www.cftc.gov/dea/newcot/FinFutWk.txt",
+      "ok": true,
+      "status": 200,
+      "content_type": "text/plain",
+      "sample": "\"CANADIAN DOLLAR - CHICAGO MERCANTILE EXCHANGE\",260512,2026-05-12,090741,CME ,00,090 ,  251467,   69818,   72243,    2075,   90749,   66981,    6595,   29032,   66695,    7119,   1",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "BLS CPI API",
+      "category": "macro",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SA0",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json",
+      "sample": "{\"status\":\"REQUEST_SUCCEEDED\",\"responseTime\":96,\"message\":[],\"Results\":{ \"series\": [{\"seriesID\":\"CUUR0000SA0\",\"data\":[{\"year\":\"2026\",\"period\":\"M04\",\"periodName\":\"April\",\"latest\":\"t",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "World Bank GDP API",
+      "category": "macro",
+      "url": "https://api.worldbank.org/v2/country/US/indicator/NY.GDP.MKTP.CD?format=json",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json;charset=utf-8",
+      "sample": "[{\"page\":1,\"pages\":2,\"per_page\":50,\"total\":66,\"sourceid\":\"2\",\"lastupdated\":\"2026-04-08\"},[{\"indicator\":{\"id\":\"NY.GDP.MKTP.CD\",\"value\":\"GDP (current US$)\"},\"country\":{\"id\":\"US\",\"val",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "ECB SDMX EXR",
+      "category": "macro",
+      "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/vnd.sdmx.genericdata+xml;version=2.1",
+      "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><message:GenericData xmlns:message=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message\" xmlns:common=\"http://www.sdmx.org/resources/sdm",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "OpenAlex works",
+      "category": "papers",
+      "url": "https://api.openalex.org/works?search=inflation%20expectations&per-page=2",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json",
+      "sample": "{\"meta\": {\"count\": 215137, \"db_response_time_ms\": 260, \"page\": 1, \"per_page\": 2, \"groups_count\": null, \"cost_usd\": 0.001}, \"results\": [{\"id\": \"https://openalex.org/W3122853957\", \"d",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "Crossref works",
+      "category": "papers",
+      "url": "https://api.crossref.org/works?query=capital%20flows&rows=2",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json",
+      "sample": "{\"status\":\"ok\",\"message-type\":\"work-list\",\"message-version\":\"1.0.0\",\"message\":{\"facets\":{},\"total-results\":423299,\"items\":[{\"indexed\":{\"date-parts\":[[2022,3,29]],\"date-time\":\"2022-",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "PubMed esearch",
+      "category": "papers",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=financial+stress&retmax=2&retmode=json",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json; charset=UTF-8",
+      "sample": "{\"header\":{\"type\":\"esearch\",\"version\":\"0.3\"},\"esearchresult\":{\"count\":\"124795\",\"retmax\":\"2\",\"retstart\":\"0\",\"idlist\":[\"42165944\",\"42165063\"],\"translationset\":[{\"from\":\"financial str",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "Semantic Scholar search",
+      "category": "papers",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=macro+finance&limit=2&fields=title,year,citationCount",
+      "ok": false,
+      "error": "HTTP Error 429: ",
+      "access_class": "rate_limited",
+      "next_action": "throttle_and_retry_or_key"
+    },
+    {
+      "source": "arXiv export api",
+      "category": "papers",
+      "url": "https://export.arxiv.org/api/query?search_query=all:economics&max_results=1",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/atom+xml; charset=utf-8",
+      "sample": "<?xml version='1.0' encoding='UTF-8'?> <feed xmlns:opensearch=\"http://a9.com/-/spec/opensearch/1.1/\" xmlns:arxiv=\"http://arxiv.org/schemas/atom\" xmlns=\"http://www.w3.org/2005/Atom\"",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "USPTO bulk data page",
+      "category": "patents",
+      "url": "https://www.uspto.gov/learning-and-resources/bulk-data-products",
+      "ok": true,
+      "status": 200,
+      "content_type": "text/html",
+      "sample": "<!doctype html> <html lang=\"en\" data-beasties-container> <head><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>   <meta charset=\"utf-8\">   <base href=\"/\">   <me",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "EPO OPS search (auth expected)",
+      "category": "patents",
+      "url": "https://ops.epo.org/3.2/rest-services/published-data/search/biblio?q=ti%3Dbattery",
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden",
+      "access_class": "auth_or_policy_block",
+      "next_action": "registration_or_user_agent"
+    },
+    {
+      "source": "WIPO Patentscope",
+      "category": "patents",
+      "url": "https://patentscope.wipo.int/search/en/search.jsf",
+      "ok": true,
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "sample": "<!DOCTYPE html> <html xmlns=\"http://www.w3.org/1999/xhtml\"><head id=\"j_idt2\"> \t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /> \t<meta lang=\"en\" http-equiv=\"Content-Type\" co",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "Google Patents search page",
+      "category": "patents",
+      "url": "https://patents.google.com/?q=battery",
+      "ok": true,
+      "status": 200,
+      "content_type": "text/html",
+      "sample": "<!DOCTYPE html> <html lang=\"en\">   <head>     <title>Google Patents</title>      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">     <meta charset=\"UTF-8\">    ",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "DeFiLlama protocols",
+      "category": "capital_flows",
+      "url": "https://api.llama.fi/protocols",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json",
+      "sample": "[{\"id\":\"2269\",\"name\":\"Binance CEX\",\"address\":null,\"symbol\":\"BNB\",\"url\":\"https://www.binance.com\",\"description\":\"Binance is a cryptocurrency exchange which is the largest exchange i",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "US Treasury FiscalData rates",
+      "category": "capital_flows",
+      "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json",
+      "sample": "{\"data\":[{\"record_date\":\"2001-03-31\",\"country\":\"Afghanistan\",\"currency\":\"Afghani\",\"country_currency_desc\":\"Afghanistan-Afghani\",\"exchange_rate\":\"78400.0\",\"effective_date\":\"2001-03-",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    },
+    {
+      "source": "GDELT DOC api",
+      "category": "news_proxy",
+      "url": "https://api.gdeltproject.org/api/v2/doc/doc?query=macroeconomy&mode=ArtList&maxrecords=3&format=json",
+      "ok": true,
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "sample": "{\"articles\": [ { \"url\": \"https://www.scmp.com/author/panpan-yang\", \"url_mobile\": \"\", \"title\": \"Panpan Yang : Latest Articles , Analysis and Profile | South China Morning Post\", \"se",
+      "access_class": "accessible_now",
+      "next_action": "onboard_now"
+    }
+  ]
+}

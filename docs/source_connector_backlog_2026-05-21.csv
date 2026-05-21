@@ -1,0 +1,20 @@
+source,category,url,access_class,friction,priority_bucket,next_action,recommended_module
+BLS CPI API,macro,https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SA0,accessible_now,low,1,onboard_now,src/ingestion/macro.py
+CFTC FinFutWk,positioning,https://www.cftc.gov/dea/newcot/FinFutWk.txt,accessible_now,low,1,onboard_now,src/ingestion/positioning.py
+ECB SDMX EXR,macro,https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A,accessible_now,low,1,onboard_now,src/ingestion/macro.py
+SEC companyfacts JSON,filings,https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json,accessible_now,low,1,onboard_now,src/ingestion/filings.py
+SEC submissions JSON,filings,https://data.sec.gov/submissions/CIK0000320193.json,accessible_now,low,1,onboard_now,src/ingestion/filings.py
+World Bank GDP API,macro,https://api.worldbank.org/v2/country/US/indicator/NY.GDP.MKTP.CD?format=json,accessible_now,low,1,onboard_now,src/ingestion/macro.py
+FRED API (needs key),macro,https://api.stlouisfed.org/fred/series/observations?series_id=CPIAUCSL&file_type=json,key_required_or_params,medium,1,add_api_key,src/ingestion/macro.py
+Crossref works,papers,https://api.crossref.org/works?query=capital%20flows&rows=2,accessible_now,low,2,onboard_now,src/ingestion/papers.py
+DeFiLlama protocols,capital_flows,https://api.llama.fi/protocols,accessible_now,low,2,onboard_now,src/ingestion/capital_flows.py
+Google Patents search page,patents,https://patents.google.com/?q=battery,accessible_now,low,2,onboard_now,src/ingestion/patents.py
+OpenAlex works,papers,https://api.openalex.org/works?search=inflation%20expectations&per-page=2,accessible_now,low,2,onboard_now,src/ingestion/papers.py
+PubMed esearch,papers,https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=financial+stress&retmax=2&retmode=json,accessible_now,low,2,onboard_now,src/ingestion/papers.py
+US Treasury FiscalData rates,capital_flows,https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange,accessible_now,low,2,onboard_now,src/ingestion/capital_flows.py
+USPTO bulk data page,patents,https://www.uspto.gov/learning-and-resources/bulk-data-products,accessible_now,low,2,onboard_now,src/ingestion/patents.py
+WIPO Patentscope,patents,https://patentscope.wipo.int/search/en/search.jsf,accessible_now,low,2,onboard_now,src/ingestion/patents.py
+arXiv export api,papers,https://export.arxiv.org/api/query?search_query=all:economics&max_results=1,accessible_now,low,2,onboard_now,src/ingestion/papers.py
+Semantic Scholar search,papers,"https://api.semanticscholar.org/graph/v1/paper/search?query=macro+finance&limit=2&fields=title,year,citationCount",rate_limited,medium,2,throttle_and_retry_or_key,src/ingestion/papers.py
+EPO OPS search (auth expected),patents,https://ops.epo.org/3.2/rest-services/published-data/search/biblio?q=ti%3Dbattery,auth_or_policy_block,high,2,registration_or_user_agent,src/ingestion/patents.py
+GDELT DOC api,news_proxy,https://api.gdeltproject.org/api/v2/doc/doc?query=macroeconomy&mode=ArtList&maxrecords=3&format=json,accessible_now,low,3,onboard_now,src/ingestion/news_proxy.py
